@@ -3,8 +3,7 @@ import { Fragment, h } from 'preact';
 import { render } from 'preact-render-to-string';
 
 import { RequestContext } from '.';
-import { BotsGGBot, fetchAvatar, fetchBot } from './util';
-import arrayBufferToBase64 from './util/base64ArrayBuffer';
+import { BotsGGBot, fetchBot } from './util';
 import { FontType, renderText, RenderTextResult } from './util/fontRender';
 
 export const WIDGET_TYPES = ['default', 'banner'] as const;
@@ -143,7 +142,6 @@ async function createMultiPartTextBox(opts: MultiPartTextBoxOptions, ctx: Reques
 }
 
 export async function getDefaultWidget(bot: BotsGGBot, ctx: RequestContext) {
-  const botAvatar = await fetchAvatar(bot.clientId, bot.avatarURL, ctx);
   const footerId = `botsgg-${bot.clientId}-footer`;
   const avatarId = `botsgg-${bot.clientId}-avatar`;
 
@@ -319,14 +317,7 @@ export async function getDefaultWidget(bot: BotsGGBot, ctx: RequestContext) {
         {/* background */}
         <circle cx={26} cy={26} r={16} fill="black" opacity={0.5} />
 
-        <image
-          x={10}
-          y={10}
-          width={32}
-          height={32}
-          xlinkHref={`data:image/png;base64,${arrayBufferToBase64(botAvatar)}`}
-          clip-path={`url(#${avatarId})`}
-        />
+        <image x={10} y={10} width={32} height={32} xlinkHref={bot.avatarURL} clip-path={`url(#${avatarId})`} />
 
         {/* status */}
         <circle cx={38} cy={38} r={5} fill="#43B581" stroke-width={2} stroke={bot.online ? '#161921' : '#747F8D'} />
@@ -373,7 +364,6 @@ export async function getDefaultWidget(bot: BotsGGBot, ctx: RequestContext) {
 }
 
 export async function getBannerWidget(bot: BotsGGBot, ctx: RequestContext) {
-  const botAvatar = await fetchAvatar(bot.clientId, bot.avatarURL, ctx);
   const avatarId = `botsgg-${bot.clientId}-avatar`;
 
   const nameText = await createTextBox(
@@ -442,14 +432,7 @@ export async function getBannerWidget(bot: BotsGGBot, ctx: RequestContext) {
         {/* background */}
         <circle cx={20} cy={20} r={12} fill="black" opacity={0.5} />
 
-        <image
-          x={8}
-          y={8}
-          width={24}
-          height={24}
-          xlinkHref={`data:image/png;base64,${arrayBufferToBase64(botAvatar)}`}
-          clip-path={`url(#${avatarId})`}
-        />
+        <image x={8} y={8} width={24} height={24} xlinkHref={bot.avatarURL} clip-path={`url(#${avatarId})`} />
 
         {/* status */}
         <circle cx={29} cy={29} r={4} fill="#43B581" stroke-width={2} stroke={bot.online ? '#161921' : '#747F8D'} />
