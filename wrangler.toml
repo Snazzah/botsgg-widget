@@ -1,0 +1,11 @@
+name="botsgg"
+main="src/index.ts"
+node_compat=true
+
+compatibility_date = "2022-11-22"
+
+kv_namespaces = [
+  { binding = "DATA_CACHE", id = "a96241821f184efeaebceb56409ff060", preview_id = "a96241821f184efeaebceb56409ff060" },
+  { binding = "SVG_CACHE", id = "9141a59adc0c46a295a7e45bcfbfa575", preview_id = "9141a59adc0c46a295a7e45bcfbfa575" },
+  { binding = "BUFFER_CACHE", id = "60a304ac442a44ef808e236d0efafe18", preview_id = "60a304ac442a44ef808e236d0efafe18" }
+]
