@@ -23,7 +23,7 @@ const app = new Hono<{ Bindings: Env }>();
 app.use('*', poweredBy());
 
 app.get('/', (c) => {
-  return c.text('Hello Hono!');
+  return c.redirect('https://github.com/Snazzah/botsgg-widget');
 });
 
 app.get('/widget/:id/:type{[a-z]+(?:\\.[sS][vV][gG])}', async (c) => {

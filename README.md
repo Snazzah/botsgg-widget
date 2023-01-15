@@ -1,4 +1,4 @@
-<center>
+<div align=center>
 
 # bots.gg Widget
 
@@ -7,9 +7,10 @@
 Create a widget from a bot in bots.gg. Formerly from SnazzahAPI.
 
 ![](https://botsgg.snazzah.dev/widget/272937604339466240/default.svg)
+
 ![](https://botsgg.snazzah.dev/widget/272937604339466240/banner.svg)
 
-</center>
+</div>
 
 
 ## Usage
