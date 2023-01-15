@@ -2,6 +2,12 @@ name: Deploy to Cloudflare Workers
 
 on:
   push:
+    paths:
+      - "src/**"
+      - ".github/workflows/deploy.yml"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "wrangler.toml"
     branches:
       - master
   workflow_dispatch:

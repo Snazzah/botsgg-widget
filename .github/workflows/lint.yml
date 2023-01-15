@@ -2,10 +2,7 @@ name: ESLint
 on:
   push:
     paths:
-      - "components/**"
-      - "pages/**"
-      - "utils/**"
-      - "lib/**"
+      - "src/**"
       - ".eslintignore"
       - ".eslintrc.*"
       - ".prettierrc"
