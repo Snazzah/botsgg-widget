@@ -2,13 +2,13 @@
 
 # bots.gg Widget
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Erisa/colour-me)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Snazzah/botsgg-widget)
 
 Create a widget from a bot in bots.gg. Formerly from SnazzahAPI.
 
-![](https://botsgg.snazzah.dev/widget/272937604339466240/default.svg)
+![](https://botsgg.snazzah.dev/widget/272937604339466240/default.svg?w=400)
 
-![](https://botsgg.snazzah.dev/widget/272937604339466240/banner.svg)
+![](https://botsgg.snazzah.dev/widget/272937604339466240/banner.svg?w=400)
 
 </div>
 
