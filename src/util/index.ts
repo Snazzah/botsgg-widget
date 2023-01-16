@@ -46,6 +46,7 @@ export async function fetchBot(id: string, ctx: RequestContext) {
   const response = await fetch(`https://discord.bots.gg/api/v1/bots/${id}`, {
     headers: {
       'User-Agent': USER_AGENT,
+      'X-Forwarded-For': ctx.req.headers.get('cf-connecting-ip'),
       ...(ctx.env.BOTGSS_AUTH ? { Authorization: ctx.env.BOTGSS_AUTH } : {})
     }
   });
@@ -68,7 +69,7 @@ export async function fetchAvatar(id: string, avatarUrl: string | null, ctx: Req
   }
 
   const response = await fetch(avatarUrl ? avatarUrl.replace('.jpg', '.png') : DEFAULT_AVATAR, {
-    headers: { 'User-Agent': USER_AGENT, 'X-Forwarded-For': ctx.req.headers['cf-connecting-ip'] }
+    headers: { 'User-Agent': USER_AGENT, 'X-Forwarded-For': ctx.req.headers.get('cf-connecting-ip') }
   });
 
   if (response.status !== 200) return fetchAvatar(id, null, ctx, true);
