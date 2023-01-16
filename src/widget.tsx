@@ -320,7 +320,7 @@ export async function getDefaultWidget(bot: BotsGGBot, ctx: RequestContext) {
         <image x={10} y={10} width={32} height={32} xlinkHref={bot.avatarURL} clip-path={`url(#${avatarId})`} />
 
         {/* status */}
-        <circle cx={38} cy={38} r={5} fill="#43B581" stroke-width={2} stroke={bot.online ? '#161921' : '#747F8D'} />
+        <circle cx={38} cy={38} r={5} fill={bot.online ? '#43B581' : '#747F8D'} stroke-width={2} stroke="#161921" />
       </a>
 
       <g>
@@ -438,7 +438,7 @@ export async function getBannerWidget(bot: BotsGGBot, ctx: RequestContext) {
         <image x={8} y={8} width={24} height={24} xlinkHref={bot.avatarURL} clip-path={`url(#${avatarId})`} />
 
         {/* status */}
-        <circle cx={29} cy={29} r={4} fill="#43B581" stroke-width={2} stroke={bot.online ? '#161921' : '#747F8D'} />
+        <circle cx={29} cy={29} r={4} fill={bot.online ? '#43B581' : '#747F8D'} stroke-width={2} stroke="#161921" />
       </a>
 
       <g>
