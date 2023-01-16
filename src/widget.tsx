@@ -354,7 +354,10 @@ export async function getDefaultWidget(bot: BotsGGBot, ctx: RequestContext) {
       </g>
 
       <g>
-        {ownerText.element}
+        <a href={`https://discord.bots.gg/profile/${bot.owner.userId}`} target="_blank">
+          {ownerText.element}
+        </a>
+
         {prefixText?.element}
       </g>
 

@@ -1,7 +1,7 @@
 import { RequestContext } from '..';
 
 const DEFAULT_AVATAR = 'https://discord.bots.gg/img/bot_icon_placeholder.png';
-const USER_AGENT = 'botsgg-worker/1.0';
+const USER_AGENT = 'botsgg-worker/1.0 (+https://github.com/Snazzah/botsgg-widget)';
 
 export interface BotsGGBot {
   userId: string;
