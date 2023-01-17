@@ -40,7 +40,7 @@ app.get('/widget/:id/:type{[a-z]+(?:\\.[sS][vV][gG])}', async (c) => {
   try {
     return c.newResponse(await handleWidget(c.req.param('id'), type as WidgetType, c, widthValid ? width : undefined), 200, {
       'Content-Type': 'image/svg+xml',
-      'Cache-Control': `${60 * 60 * 3}`
+      'Cache-Control': `max-age=${60 * 60 * 3}`
     });
   } catch (e) {
     if (e.message === 'Forbidden') return c.text('Forbidden', 403);
