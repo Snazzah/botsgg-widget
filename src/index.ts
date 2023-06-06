@@ -3,20 +3,16 @@ import { poweredBy } from 'hono/powered-by';
 
 import { handleWidget, WIDGET_TYPES, WidgetType } from './widget';
 
-export interface Env {
+type Env = {
   BUFFER_CACHE: KVNamespace;
   DATA_CACHE: KVNamespace;
   SVG_CACHE: KVNamespace;
   BOTGSS_AUTH?: string;
-}
+};
 
-export type RequestContext = Context<
-  'id' | 'type',
-  {
-    Bindings: Env;
-  },
-  unknown
->;
+export type RequestContext = Context<{
+  Bindings: Env;
+}>;
 
 const app = new Hono<{ Bindings: Env }>();
 
