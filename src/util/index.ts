@@ -7,6 +7,7 @@ export interface BotsGGBot {
   userId: string;
   clientId: string;
   username: string;
+  globalName: string | null;
   discriminator: string;
   avatarURL: string | null;
   coOwners: BotsGGOwner[];
@@ -34,6 +35,7 @@ export interface BotsGGOwner {
   username: string;
   discriminator: string;
   userId: string;
+  globalName: string | null;
 }
 
 export async function fetchBot(id: string, ctx: RequestContext) {
