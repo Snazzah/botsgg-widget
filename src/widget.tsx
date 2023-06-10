@@ -203,7 +203,7 @@ export async function getDefaultWidget(bot: BotsGGBot, ctx: RequestContext) {
       size: 9,
       parts: [
         {
-          text: bot.owner.username,
+          text: bot.owner.discriminator === '0' ? bot.owner.globalName : bot.owner.username,
           fill: 'white'
         },
         ...(bot.owner.discriminator !== '0'
@@ -384,7 +384,7 @@ export async function getBannerWidget(bot: BotsGGBot, ctx: RequestContext) {
   const avatarId = `botsgg-${bot.clientId}-avatar`;
 
   const nameText = await createTextBox(
-    bot.username,
+    bot.globalName || bot.username,
     {
       x: 50,
       y: 10,
