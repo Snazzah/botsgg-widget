@@ -60,14 +60,16 @@ async function createTextBox(text: string, opts: TextBoxOptions, ctx: RequestCon
         />
       )}
       {textData.d && <path d={textData.d} fill={opts.fill} opacity={opts.opacity} transform={`translate(${opts.x} ${opts.y})`} />}
-      {textData.paths?.slice(0, opts.maxLines).map((path, i) => (
-        <path
-          d={path.d}
-          fill={opts.fill}
-          opacity={opts.opacity}
-          transform={`translate(${opts.x} ${opts.y + textData.paths.slice(0, i).reduce((p, path) => p + path.metrics.height, 0)})`}
-        />
-      ))}
+      {textData.paths
+        ?.slice(0, opts.maxLines)
+        .map((path, i) => (
+          <path
+            d={path.d}
+            fill={opts.fill}
+            opacity={opts.opacity}
+            transform={`translate(${opts.x} ${opts.y + textData.paths.slice(0, i).reduce((p, path) => p + path.metrics.height, 0)})`}
+          />
+        ))}
     </g>
   );
 
