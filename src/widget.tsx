@@ -182,13 +182,13 @@ export async function getDefaultWidget(bot: BotsGGBot, ctx: RequestContext) {
       },
       ctx
     );
-    headerX += serversText.textData.metrics.width + 10;
+    headerX += serversText.textData.metrics.width + 30;
   }
 
   const libraryText = await createTextBox(
     bot.libraryName,
     {
-      x: headerX + 34,
+      x: headerX + 18,
       y: 6,
       size: 11,
       fill: '#424A62'
