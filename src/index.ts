@@ -7,7 +7,7 @@ type Env = {
   BUFFER_CACHE: KVNamespace;
   DATA_CACHE: KVNamespace;
   SVG_CACHE: KVNamespace;
-  BOTGSS_AUTH?: string;
+  BOTSGG_AUTH?: string;
 };
 
 export type RequestContext = Context<{
@@ -19,7 +19,7 @@ const app = new Hono<{ Bindings: Env }>();
 app.use('*', poweredBy());
 
 app.use('*', async (c, next) => {
-  if (c.req.headers.get('cf-worker')) return c.text('This service is not meant for worker subrequests.', 403);
+  if (c.req.header('cf-worker')) return c.text('This service is not meant for worker subrequests.', 403);
   await next();
 });
 
